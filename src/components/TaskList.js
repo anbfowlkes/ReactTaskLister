@@ -1,11 +1,13 @@
 import Task from './Task'
-
-const TaskList = () => {
+let c = 0
+const TaskList = ( {tasks} ) => {
     return (
         <div> 
             <h3>My To-do's</h3>
             <ul>
-                <Task />
+                {tasks.map((task) => {
+                    return(<Task key={c++} text={task} />)
+                })}
             </ul>
         </div>
     )
